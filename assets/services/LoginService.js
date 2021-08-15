@@ -18,7 +18,7 @@ if(email != null && password != null){
     
     password.addEventListener('keyup',function(){
         var inputVal = password.value;
-        if( inputVal.includes('@') || inputVal.includes("$") || inputVal.includes("#") && inputVal.length >= 8 ){
+        if( inputVal.length >= 8 ){
             passwordVal = inputVal;
         }
     });
@@ -26,7 +26,7 @@ if(email != null && password != null){
     // SUBMIT ACTION
     function actionSubmit(event){
         event.preventDefault();
-        if( emailVal != null || passwordVal != null ){
+        if( emailVal != null && passwordVal != null ){
             login_validation(emailVal,passwordVal);
         }
     }
@@ -35,22 +35,17 @@ if(email != null && password != null){
     function login_validation(email, password){
         if((email != null || email != "") && (password != null || password != "")){
             var xhttp = new XMLHttpRequest();
-            xhttp.open('POST', '../controller/admin/LoginController.php', true);
+            xhttp.open('POST', '../controller/LoginController.php', true);
             xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             xhttp.send("email="+email+"&password="+password+"&submit="+submitBtn.value);
             
             xhttp.onreadystatechange = function (){
-                console.log(this.response);
                 if(this.readyState == 4 && this.status == 200){
                     if(this.responseText != ""){
-                        console.log(this.response);
                         if(this.responseText == "true"){
-                            window.location = "../pages/admin/admin_home.php";
+                            window.location = "../views/admin/dashboard.php";
                         }
                         else{
-                            // document.getElementById('error').innerHTML = "Invalid Information..";
-                            // document.getElementById('error').style.color = 'red';
-                            // window.location = "../common_pages/login.php";
                             alert("INCORRECT DATA...");
                         }
                     }
@@ -60,10 +55,4 @@ if(email != null && password != null){
     }
 
     submitBtn.addEventListener('click', actionSubmit);    
-}
-
-
-
-function emailCheck(){
-
 }

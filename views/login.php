@@ -18,32 +18,50 @@
     <script src="../assets/admin/js/jquery-3.5.1.js"></script>
     <script src="../assets/admin/lib/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
 
-    <title id="title">Dashboard</title>
+    <title id="title">Login</title>
 </head>
 <body>
     
     <section class="main login-page">
-
+        <?php
+            if(isset($_COOKIE['email']) && isset($_COOKIE['password'])){
+                $email = $_COOKIE['email'] ;
+                $pass = $_COOKIE['password'] ;
+            }
+            else{
+                $email = '' ;
+                $pass = '';
+            }
+        ?>
         <div class="container">
             <div class="row form-area">
                 <div class="col-md-6 m-auto">
                     <div class="login">
                         <h4>Welcome</h4>
-                        <p>Please insert your login credentials</p>
+                        <p>Please insert your login credentials <br><?php include "../config/db_config.php";?></p>
                         <form class="login_form" id="login_form" action="" method="POST">
                             <div class="form-group">
                                 <label>Email or Username</label>
-                                <input type="email" class="form-control" name="email" id="emailId">
+                                <input type="email" class="form-control" name="email" id="emailId" value="<?=$email?>">
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" class="form-control" name="password" id="password">
+                                <input type="password" class="form-control" name="password" id="password" value="<?=$pass?>">
                             </div>
                             <div class="form-group parent">
                                 <a href="forgot-password.php" class="forgot">Forgot Password?</a>
                             </div>
                             <div class="form-group text-center">
-                                <input type="submit" class="btn" value="Submit" name="submit" id="submitBtn">
+                                <?php
+                                    session_start();
+                                    if(isset($_SESSION['loginError'])){
+                                        ?>
+                                            <p class="text-danger text-center"><?php echo $_SESSION['loginError'];?></p>
+                                        <?php
+                                    }
+                                    session_destroy();
+                                ?>
+                                <input type="submit" class="btn btn-custom" value="Submit" name="submit" id="submitBtn">
                             </div>
                         </form>
                     </div>
@@ -54,7 +72,7 @@
     </section>
 
 
-    <script src="../assets/admin/js/services/LoginService.js"></script>
+    <script src="../assets/services/LoginService.js"></script>
 
 </body>
 </html>

@@ -12,91 +12,77 @@
     <!-- MENU ITEMS -->
     <ul class="nav_list list-unstyled">
         <li>
-            <a href="index.html">
+            <a href="dashboard.php">
                 <i class='bx bx-grid-alt' ></i>
                 <span class="links_name">Dashboard</span>
             </a>
             <span class="tooltip-x">Dashboard</span>
         </li>
         <li>
-            <a href="#">
+            <a href="webinfo.php?do=Manage">
                 <i class='bx bx-window-alt'></i>
                 <span class="links_name">Website Info</span>
             </a>
             <span class="tooltip-x">Website Info</span>
         </li>
         <li>
-            <a href="pages/base.html">
+            <a href="users.php?do=Manage">
                 <i class='bx bxs-user-detail'></i>
                 <span class="links_name">Users</span>
             </a>
             <span class="tooltip-x">Users</span>
         </li>
         <li>
-            <a href="#">
+            <a href="category.php?do=Manage">
                 <i class='bx bx-category' ></i>
                 <span class="links_name">Category</span>
             </a>
             <span class="tooltip-x">Category</span>
         </li>
         <li>
-            <a href="#">
+            <a href="product.php?do=Manage">
                 <i class='bx bxl-product-hunt' ></i>
                 <span class="links_name">Products</span>
             </a>
             <span class="tooltip-x">Products</span>
         </li>
         <li>
-            <a href="#">
-                <i class='bx bxs-user-pin' ></i>
-                <span class="links_name">Salesmans</span>
-            </a>
-            <span class="tooltip-x">Salesmans</span>
-        </li>
-        <li>
-            <a href="#">
+            <a href="customers.php?do=Manage">
                 <i class='bx bx-user-circle' ></i>
                 <span class="links_name">Customers</span>
             </a>
             <span class="tooltip-x">Customers</span>
         </li>
         <li>
-            <a href="#">
+            <a href="orders.php?do=Manage">
                 <i class='bx bx-list-check' ></i>
                 <span class="links_name">Orders</span>
             </a>
             <span class="tooltip-x">Orders</span>
         </li>
         <li>
-            <a href="#">
+            <a href="coupons.php?do=Manage">
                 <i class='bx bxs-coupon' ></i>
                 <span class="links_name">Coupons</span>
             </a>
             <span class="tooltip-x">Coupons</span>
         </li>
         <li>
-            <a href="#">
+            <a href="payments.php?do=Manage">
                 <i class='bx bx-store' ></i>
-                <span class="links_name">Invetory</span>
+                <span class="links_name">Payment Methods</span>
             </a>
-            <span class="tooltip-x">Invetory</span>
+            <span class="tooltip-x">Payment Methods</span>
         </li>
         <li>
-            <a href="#">
+            <a href="reviews.php?do=Manage">
                 <i class='bx bxs-comment-detail'></i>
                 <span class="links_name">Reviews</span>
             </a>
             <span class="tooltip-x">Reviews</span>
         </li>
         <li>
-            <a href="#">
-                <i class='bx bxl-blogger' ></i>
-                <span class="links_name">Blogs</span>
-            </a>
-            <span class="tooltip-x">Blogs</span>
-        </li>
-        <li>
-            <a href="#">
+            <a href="reports.php?do=Manage">
                 <i class='bx bxs-report' ></i>
                 <span class="links_name">Reports</span>
             </a>
